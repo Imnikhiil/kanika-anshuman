@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#240511">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Kanika &amp; Anshuman">
 <meta property="og:title" content="Kanika &amp; Anshuman – Wedding Invitation">
@@ -17,10 +18,11 @@
 <title>Kanika &amp; Anshuman – Wedding Invitation</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#240511;--bg2:#4d0f25;--gold:#e6b85c;--gold2:#fbe3a1;--txt:#f8ecdc;--soft:#e9c7c0;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{--bg:#240511;--bg2:#4d0f25;--gold:#e6b85c;--gold2:#fbe3a1;--txt:#f8ecdc;--soft:#e9c7c0;color-scheme:dark;box-sizing:border-box}
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{background:radial-gradient(ellipse at 50% -10%,var(--bg2),var(--bg) 60%) fixed;color:var(--txt);font-family:"Poppins",system-ui,sans-serif;font-weight:400;font-size:16.5px;line-height:1.75;text-align:center;overflow-x:hidden}
+html{scroll-behavior:smooth;background:#240511;-webkit-text-size-adjust:100%;text-size-adjust:100%;-webkit-tap-highlight-color:transparent;overflow-x:hidden}
+body{background:var(--bg);max-width:100%;overflow-x:clip;color:var(--txt);font-family:"Poppins",system-ui,sans-serif;font-weight:400;font-size:16.5px;line-height:1.75;text-align:center;overflow-x:hidden}
+body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 50% -10%,var(--bg2),var(--bg) 60%)}
 body:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.07;background:repeating-conic-gradient(from 0deg at 50% 50%,var(--gold) 0 5deg,transparent 5deg 15deg);mask:radial-gradient(circle,#000,transparent 70%);-webkit-mask:radial-gradient(circle,#000,transparent 70%)}
 main,footer,.hero{position:relative;z-index:1}
 section{padding:70px 20px;max-width:780px;margin:auto}
@@ -50,7 +52,7 @@ h2{font-family:"Cinzel",Georgia,serif;font-weight:700;color:var(--gold);font-siz
 button,.btn{font:inherit;font-weight:600;font-family:"Cinzel",serif;letter-spacing:1.5px;background:linear-gradient(135deg,#f3cd7a,#b8862b);color:#3a0a19;border:0;padding:14px 30px;border-radius:50px;font-size:.95rem;cursor:pointer;text-decoration:none;display:inline-block;box-shadow:0 8px 24px #0008,inset 0 1px 0 #fff8;transition:transform .25s}
 button:hover,.btn:hover{transform:translateY(-3px) scale(1.04)}
 .btn.line{background:transparent;color:var(--gold2);border:1.5px solid var(--gold);box-shadow:none}
-.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 16px 50px;overflow:hidden}
+.hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 16px 50px;overflow:hidden}
 .bg{position:absolute;inset:-30px;z-index:-1;background-size:cover;background-position:center;filter:blur(16px) brightness(.35) saturate(1.2);animation:kb 24s ease-in-out infinite alternate}
 @keyframes kb{to{transform:scale(1.15)}}
 .mandala{position:absolute;width:min(140vw,860px);top:50%;left:50%;margin:calc(min(140vw,860px)/-2) 0 0 calc(min(140vw,860px)/-2);opacity:.22;animation:spin 100s linear infinite;pointer-events:none;z-index:-1}
@@ -108,7 +110,7 @@ button:hover,.btn:hover{transform:translateY(-3px) scale(1.04)}
 .hero:not(.go) .names,.hero:not(.go) .date{opacity:0}
 .hero.go .names{animation:focus 2s cubic-bezier(.2,.7,.2,1) both,shine 5s linear infinite}
 .hero.go .date{animation:focus 2s .5s both}
-@keyframes focus{from{letter-spacing:.35em;opacity:0;filter:blur(14px)}to{opacity:1;filter:blur(0)}}
+@keyframes focus{from{transform:scale(1.18);opacity:0;filter:blur(14px)}to{transform:none;opacity:1;filter:blur(0)}}
 .tw{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;z-index:-1;animation:tw 3s infinite}
 @keyframes tw{0%,100%{opacity:0}50%{opacity:1;box-shadow:0 0 8px 2px var(--gold)}}
 .marq{overflow:hidden;white-space:nowrap;border-block:1px solid var(--gold);background:linear-gradient(90deg,#b8862b,#f3cd7a,#b8862b);color:#3a0a19;font-family:"Cinzel",serif;font-weight:700;letter-spacing:4px;font-size:.85rem;padding:9px 0;position:relative;z-index:1}
@@ -126,6 +128,61 @@ button:hover,.btn:hover{transform:translateY(-3px) scale(1.04)}
 #fw{position:fixed;inset:0;z-index:98;pointer-events:none}
 footer{padding:30px 20px 80px;color:var(--soft);font-size:.95rem}
 footer img{width:96px;border-radius:50%;border:2px solid var(--gold);background:#fff;padding:6px}
+
+/* ===== Mobile-first overrides ===== */
+@media (hover:none){
+  button:hover,.btn:hover,.ev:hover,.ph:hover{transform:none}
+  .ph:hover:after{transform:translateX(-120%)}
+}
+@media (max-width:600px){
+  body{font-size:16px;line-height:1.7}
+  section{padding:48px 16px}
+  h2{font-size:clamp(1.3rem,6.2vw,1.65rem);letter-spacing:2.5px}
+  .script{font-size:1.75rem}
+  #intro .script{font-size:2rem!important}
+  .eyebrow{letter-spacing:3px;font-size:.72rem;line-height:1.8}
+  .orn{margin:12px auto 24px;max-width:240px}
+  .garland{height:26px;background-size:24px 26px}
+  .hero{padding:76px 16px 44px}
+  .hero>p.eyebrow:first-of-type{padding:0 56px}
+  .hang{top:34px;width:46px;height:112px}
+  .hang.l{left:2%}.hang.r{right:2%}
+  .bg{animation:none}
+  .arch{width:min(250px,66vw);margin:18px auto 8px}
+  .arch:after{inset:-30px -22px}
+  .badge{width:72px;height:72px;right:-12px;bottom:22px;font-size:.55rem}
+  .names{font-size:clamp(3rem,14vw,4.6rem);margin:12px 0 2px}
+  .date{font-size:.95rem;letter-spacing:3px}
+  .marq{font-size:.72rem;letter-spacing:3px}
+  .nm{font-size:2.3rem}
+  .sub{font-size:.9rem}
+  .frame{padding:26px 16px}
+  .cd{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .cd div{width:auto;padding:12px 0}
+  .cd b{font-size:1.4rem}
+  .cd span{font-size:.58rem;letter-spacing:1px}
+  .day{font-size:.95rem;letter-spacing:2px;margin:22px 0 10px}
+  .ev{padding:12px 14px;gap:12px}
+  .ev .i{width:46px;height:46px;font-size:1.35rem}
+  .ev h3{font-size:.95rem;line-height:1.4}
+  .ev p{font-size:.88rem;line-height:1.5}
+  .grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .vid{max-width:min(300px,86vw)}
+  .btns{flex-direction:column;align-items:stretch;gap:12px;margin:20px 0}
+  button,.btn{padding:15px 20px;min-height:48px;text-align:center}
+  .fab{right:12px;bottom:calc(14px + env(safe-area-inset-bottom,0px));padding:10px 16px;font-size:.74rem}
+  footer{padding:20px 16px calc(90px + env(safe-area-inset-bottom,0px));font-size:.9rem}
+  .seal{width:96px;height:96px;font-size:2.3rem}
+}
+@media (max-width:360px){
+  .eyebrow{letter-spacing:2px}
+  .cd b{font-size:1.2rem}
+  .date{letter-spacing:2px;font-size:.88rem}
+  .hero>p.eyebrow:first-of-type{padding:0 48px}
+}
+@media (prefers-reduced-motion:reduce){
+  .petal,.tw,.garland,.mandala,.hang,.bg,.arch:after{animation:none!important}
+}
 </style>
 </head>
 <body>
@@ -242,12 +299,12 @@ function boom(x,y){var col=["#fbe3a1","#e6b85c","#ff8fab","#fff"][Math.floor(Mat
 function loop(){cx.clearRect(0,0,cv.width,cv.height);pt=pt.filter(function(p){return p.l>0});pt.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.vy+=.05;p.vx*=.985;p.l-=.013;cx.globalAlpha=Math.max(p.l,0);cx.fillStyle=p.c;cx.beginPath();cx.arc(p.x,p.y,2.2,0,6.283);cx.fill()});if(pt.length)requestAnimationFrame(loop);else{run=0;cx.clearRect(0,0,cv.width,cv.height)}}
 function show(){for(var i=0;i<6;i++)setTimeout(function(){boom(innerWidth*(.15+Math.random()*.7),innerHeight*(.15+Math.random()*.4))},i*450)}
 $("fab").href="https://wa.me/919213395138?text="+encodeURIComponent("Hello! We will happily join Kanika & Anshuman’s wedding on 3 December 2026 🙏");
-for(var i=0;i<40;i++){var w=document.createElement("i");w.className="tw";w.style.left=Math.random()*100+"%";w.style.top=Math.random()*100+"%";w.style.animationDelay=Math.random()*3+"s";$("hero").appendChild(w)}
-var lt=0;function trail(e){var n=Date.now();if(n-lt<45)return;lt=n;var pnt=e.touches?e.touches[0]:e,s=document.createElement("i");s.className="sp";s.textContent="✦";s.style.left=pnt.clientX+"px";s.style.top=pnt.clientY+"px";document.body.appendChild(s);setTimeout(function(){s.remove()},800)}
+var SM=innerWidth<600;for(var i=0;i<(SM?16:40);i++){var w=document.createElement("i");w.className="tw";w.style.left=Math.random()*100+"%";w.style.top=Math.random()*100+"%";w.style.animationDelay=Math.random()*3+"s";$("hero").appendChild(w)}
+var lt=0;function trail(e){var n=Date.now();if(n-lt<(SM?90:45))return;lt=n;var pnt=e.touches?e.touches[0]:e,s=document.createElement("i");s.className="sp";s.textContent="✦";s.style.left=pnt.clientX+"px";s.style.top=pnt.clientY+"px";document.body.appendChild(s);setTimeout(function(){s.remove()},800)}
 addEventListener("pointermove",trail);addEventListener("touchmove",trail,{passive:true});
 var fin=0;
-$("open").onclick=function(){$("hero").classList.add("go");setTimeout(show,900);$("intro").classList.add("gone");setTimeout(function(){$("intro").style.display="none"},2000);var cc=["#e6b85c","#fbe3a1","#ff8fab","#fff","#f48c06"];for(var i=0;i<80;i++){var c=document.createElement("i");c.className="conf";c.style.left=Math.random()*100+"vw";c.style.background=cc[i%5];c.style.borderRadius=i%2?"50%":"2px";c.style.setProperty("--dx",(Math.random()*200-100)+"px");c.style.setProperty("--r",(Math.random()*900)+"deg");c.style.animationDuration=(2.5+Math.random()*2.5)+"s";c.style.animationDelay=(.6+Math.random()*.8)+"s";document.body.appendChild(c);setTimeout(function(x){x.remove()},7000,c)}};
-window.addEventListener("scroll",function(){var h=document.documentElement;$("prog").style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%"});
+$("open").onclick=function(){$("hero").classList.add("go");setTimeout(show,900);$("intro").classList.add("gone");setTimeout(function(){$("intro").style.display="none"},2000);var cc=["#e6b85c","#fbe3a1","#ff8fab","#fff","#f48c06"];for(var i=0;i<(SM?45:80);i++){var c=document.createElement("i");c.className="conf";c.style.left=Math.random()*100+"vw";c.style.background=cc[i%5];c.style.borderRadius=i%2?"50%":"2px";c.style.setProperty("--dx",(Math.random()*200-100)+"px");c.style.setProperty("--r",(Math.random()*900)+"deg");c.style.animationDuration=(2.5+Math.random()*2.5)+"s";c.style.animationDelay=(.6+Math.random()*.8)+"s";document.body.appendChild(c);setTimeout(function(x){x.remove()},7000,c)}};
+window.addEventListener("scroll",function(){var h=document.documentElement;$("prog").style.width=(h.scrollTop/Math.max(1,h.scrollHeight-h.clientHeight)*100)+"%"},{passive:true});
 $("lb").onclick=function(){$("lb").classList.remove("on")};
 var m="";
 for(var r=0;r<3;r++){var n=12+r*6,rad=30+r*28;for(var i=0;i<n;i++){m+='<ellipse cx="0" cy="-'+rad+'" rx="'+(7+r*2)+'" ry="'+(18+r*4)+'" transform="rotate('+(i*360/n)+')"/>'}}
@@ -267,7 +324,7 @@ var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isInterse
 document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)});
 var fo=new IntersectionObserver(function(e){if(e[0].isIntersecting&&!fin){fin=1;show()}},{threshold:.5});fo.observe(document.querySelector("footer"));
 var P=["🌼","🌺","✨","🌸","✦"];
-for(var k=0;k<22;k++){var q=document.createElement("div");q.className="petal";q.textContent=P[k%5];q.style.left=Math.random()*100+"vw";q.style.fontSize=(11+Math.random()*13)+"px";q.style.color="#e6b85c";q.style.setProperty("--dx",(Math.random()*140-70)+"px");q.style.animationDuration=(9+Math.random()*10)+"s";q.style.animationDelay=(-Math.random()*18)+"s";q.style.opacity=.7;document.body.appendChild(q)}
+for(var k=0;k<(SM?11:22);k++){var q=document.createElement("div");q.className="petal";q.textContent=P[k%5];q.style.left=Math.random()*100+"vw";q.style.fontSize=(11+Math.random()*13)+"px";q.style.color="#e6b85c";q.style.setProperty("--dx",(Math.random()*140-70)+"px");q.style.animationDuration=(9+Math.random()*10)+"s";q.style.animationDelay=(-Math.random()*18)+"s";q.style.opacity=.7;document.body.appendChild(q)}
 $("rsvp").href="https://wa.me/919213395138?text="+encodeURIComponent("Hello! We will happily join Kanika & Anshuman’s wedding on 3 December 2026 🙏");
 $("share").onclick=function(){var t="💌 You are cordially invited 💌\nKanika ♥ Anshuman’s Wedding\n3 & 4 December 2026 · V-Club, Gurugram\nWe would love to have you with us 🙏\n";
 if(navigator.share){navigator.share({title:"Kanika & Anshuman – Wedding Invitation",text:t,url:location.href}).catch(function(){})}else{window.open("https://wa.me/?text="+encodeURIComponent(t+location.href))}};
